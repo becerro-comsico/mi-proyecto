@@ -4,6 +4,9 @@ import co.edu.unillanos.campusfest.application.port.RepositorioEventos;
 import co.edu.unillanos.campusfest.domain.EstadoReserva;
 import co.edu.unillanos.campusfest.domain.Evento;
 import co.edu.unillanos.campusfest.domain.Reserva;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 import java.time.LocalDateTime;
 import java.util.UUID;
 import org.junit.jupiter.api.Test;
@@ -12,8 +15,26 @@ import static org.junit.jupiter.api.Assertions.*;
 class RepositorioEventosH2Test {
     private final LocalDateTime fecha = LocalDateTime.of(2026, 11, 28, 19, 0);
 
+    private Connection conexionNueva() {
+        try {
+            return DriverManager.getConnection("jdbc:h2:mem:test_" + UUID.randomUUID());
+        } catch (SQLException error) {
+            throw new IllegalStateException(error);
+        }
+    }
+
+    private Connection conexionCerrada() {
+        try {
+            Connection conexion = conexionNueva();
+            conexion.close();
+            return conexion;
+        } catch (SQLException error) {
+            throw new IllegalStateException(error);
+        }
+    }
+
     private RepositorioEventosH2 nuevoRepositorio() {
-        return new RepositorioEventosH2("jdbc:h2:mem:test_" + UUID.randomUUID() + ";DB_CLOSE_DELAY=-1");
+        return new RepositorioEventosH2(conexionNueva());
     }
 
     @Test void implementaPuertoYNoEncuentraEventoInexistente() {
@@ -63,7 +84,7 @@ class RepositorioEventosH2Test {
 
     @Test void falloDeBaseDeDatosSeConvierteEnIllegalStateException() {
         assertThrows(IllegalStateException.class,
-                () -> new RepositorioEventosH2("jdbc:h2:invalid:database"));
+                () -> new RepositorioEventosH2(conexionCerrada()));
     }
 
     @Test void rollbackEvitaGuardarParcialmente() {
