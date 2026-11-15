@@ -4,8 +4,8 @@ Aplicación JavaFX para gestionar las entradas de eventos universitarios. Proyec
 
 ## Integrantes
 
-- Emmanuel (COMPLETAR APELLIDOS)
-- David Arias (COMPLETAR APELLIDOS)
+- Emmanuel Fernando Camacho Cruz - código estudiantil: 160004908
+- David Fernando Arias Sanchez - código estudiantil: 160004902
 
 ## Cómo ejecutar
 
@@ -31,7 +31,6 @@ Arquitectura limpia con tres paquetes: `domain` (entidades con sus reglas), `app
 Se usó **Claude (Anthropic)** como asistente para:
 - Armar el `pom.xml` y la estructura de paquetes.
 - Escribir las entidades del dominio (`Evento`, `Reserva`, `Asistencia`, `EstadoReserva`), los puertos, los casos de uso, `RelojDelSistema`, los FXML y los controladores de las pantallas, guiándose por `CONTRATO.md` y las pruebas entregadas.
-- COMPLETAR: qué herramienta usó David y en qué clases (por ejemplo `RepositorioEventosH2`).
 
 Todo el código se revisó, se ejecutó con `mvn test` y se integró por pull requests.
 
