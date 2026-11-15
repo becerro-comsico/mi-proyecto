@@ -1,0 +1,22 @@
+.raiz {
+    -fx-background-color: #f4f6fb;
+    -fx-padding: 20;
+}
+
+.titulo {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+}
+
+.boton {
+    -fx-background-color: #3f51b5;
+    -fx-text-fill: white;
+}
+
+.resultado {
+    -fx-font-size: 16px;
+}
+
+.mensaje {
+    -fx-text-fill: #b00020;
+}
