@@ -13,6 +13,6 @@
     <Label styleClass="titulo" text="Registrar ingreso"/>
     <TextField fx:id="campoEventoId" promptText="Código del evento"/>
     <TextField fx:id="campoCodigoQr" promptText="Código QR de la reserva"/>
-    <Button fx:id="botonRegistrar" onAction="#registrar" styleClass="boton" text="Registrar ingreso"/>
+    <Button onAction="#registrar" styleClass="boton" text="Registrar ingreso"/>
     <Label fx:id="etiquetaMensaje" styleClass="mensaje"/>
 </VBox>

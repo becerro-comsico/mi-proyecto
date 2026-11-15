@@ -12,11 +12,11 @@
     </stylesheets>
     <Label styleClass="titulo" text="Editar evento"/>
     <TextField fx:id="campoEventoId" promptText="Código del evento"/>
-    <Button fx:id="botonCargar" onAction="#cargar" styleClass="boton" text="Cargar evento"/>
+    <Button onAction="#cargar" styleClass="boton" text="Cargar evento"/>
     <TextField fx:id="campoNombre" promptText="Nombre"/>
     <TextField fx:id="campoFecha" promptText="Fecha y hora (2026-11-28T19:00)"/>
     <TextField fx:id="campoLugar" promptText="Lugar"/>
     <TextField fx:id="campoAforo" promptText="Aforo"/>
-    <Button fx:id="botonGuardar" onAction="#guardar" styleClass="boton" text="Guardar cambios"/>
+    <Button onAction="#guardar" styleClass="boton" text="Guardar cambios"/>
     <Label fx:id="etiquetaMensaje" styleClass="mensaje"/>
 </VBox>

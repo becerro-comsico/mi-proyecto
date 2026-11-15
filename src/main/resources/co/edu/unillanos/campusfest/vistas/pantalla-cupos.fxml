@@ -12,7 +12,7 @@
     </stylesheets>
     <Label styleClass="titulo" text="Consultar cupos"/>
     <TextField fx:id="campoEventoId" promptText="Código del evento"/>
-    <Button fx:id="botonConsultar" onAction="#consultar" styleClass="boton" text="Consultar"/>
+    <Button onAction="#consultar" styleClass="boton" text="Consultar"/>
     <Label fx:id="etiquetaCupos" styleClass="resultado"/>
     <Label fx:id="etiquetaMensaje" styleClass="mensaje"/>
 </VBox>
