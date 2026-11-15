@@ -13,8 +13,8 @@
     <Label styleClass="titulo" text="Reservar entrada"/>
     <TextField fx:id="campoEventoId" promptText="Código del evento"/>
     <TextField fx:id="campoEstudianteId" promptText="Código del estudiante"/>
-    <Button fx:id="botonSolicitar" onAction="#solicitar" styleClass="boton" text="Solicitar reserva"/>
+    <Button onAction="#solicitar" styleClass="boton" text="Solicitar reserva"/>
     <TextField fx:id="campoCodigoReserva" promptText="Código de la reserva (para confirmar)"/>
-    <Button fx:id="botonConfirmar" onAction="#confirmar" styleClass="boton" text="Confirmar reserva"/>
+    <Button onAction="#confirmar" styleClass="boton" text="Confirmar reserva"/>
     <Label fx:id="etiquetaMensaje" styleClass="mensaje"/>
 </VBox>
