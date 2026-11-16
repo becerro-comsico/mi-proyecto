@@ -10,8 +10,11 @@ Aplicación JavaFX para gestionar las entradas de eventos universitarios. Proyec
 ## Cómo ejecutar
 
 Requisitos: Java 21 y Maven.
-mvn test # ejecuta las pruebas
-mvn javafx:run # abre la aplicación
+
+```
+mvn test          # ejecuta las pruebas
+mvn javafx:run    # abre la aplicación
+```
 
 La aplicación guarda sus datos en una base H2 y, al iniciar, crea un evento de ejemplo (código `taller-1`, aforo 20) para poder probar los casos de uso.
 
@@ -24,7 +27,7 @@ La aplicación guarda sus datos en una base H2 y, al iniciar, crea un evento de 
 
 ## Arquitectura
 
-Arquitectura limpia con tres paquetes: `domain` (entidades con sus reglas), `application` (puertos y casos de uso) e `infrastructure` (H2, memoria, reloj y pantallas JavaFX). Solo `App` crea las implementaciones de los puertos.
+Arquitectura limpia con tres paquetes: `domain` (entidades con sus reglas), `application` (puertos y casos de uso) e `infrastructure` (H2, memoria, reloj y pantallas JavaFX). Solo `App` crea las implementaciones de los puertos. Para guardar en memoria en vez de H2 solo cambia `App` (`new RepositorioEventosEnMemoria()` en lugar de `new RepositorioEventosH2(conexion)`); las entidades y los casos de uso no se tocan.
 
 ## Declaración de uso de IA
 
