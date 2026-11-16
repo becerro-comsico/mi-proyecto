@@ -36,17 +36,21 @@ public class Reserva {
         if (estado == EstadoReserva.CONFIRMADA) {
             return true;
         }
-        return estado == EstadoReserva.PENDIENTE && ahora.isBefore(venceEn);
+        return estado == EstadoReserva.PENDIENTE && estaVigente(ahora);
     }
 
     public void confirmar(LocalDateTime ahora) {
         if (estado != EstadoReserva.PENDIENTE) {
             throw new IllegalStateException("Solo se puede confirmar una reserva pendiente.");
         }
-        if (!ahora.isBefore(venceEn)) {
+        if (!estaVigente(ahora)) {
             throw new IllegalStateException("La reserva venció: el plazo de 10 minutos terminó.");
         }
         estado = EstadoReserva.CONFIRMADA;
+    }
+
+    private boolean estaVigente(LocalDateTime ahora) {
+        return ahora.isBefore(venceEn);
     }
 
     public void cancelar() {
