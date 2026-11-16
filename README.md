@@ -33,7 +33,10 @@ Arquitectura limpia con tres paquetes: `domain` (entidades con sus reglas), `app
 
 Se usó **Claude (Anthropic)** como asistente para:
 - Armar el `pom.xml` y la estructura de paquetes.
-- Escribir las entidades del dominio (`Evento`, `Reserva`, `Asistencia`, `EstadoReserva`), los puertos, los casos de uso, `RelojDelSistema`, los FXML y los controladores de las pantallas, guiándose por `CONTRATO.md` y las pruebas entregadas.
+- Escribir las entidades del dominio (`Evento`, `Reserva`, `Asistencia`, `EstadoReserva`), los puertos, los casos de uso, `RelojDelSistema`, los FXML y los controladores de las pantallas, `App` y `Launcher`, guiándose por `CONTRATO.md` y las pruebas entregadas.
+- Ajustar `RepositorioEventosH2` para que reciba la `Connection`, como pide el contrato.
+
+David usó **ChatGPT (OpenAI)** para la capa de infraestructura: `RepositorioEventosEnMemoria` (con un `HashMap`), `RepositorioEventosH2` (JDBC para guardar y recuperar la información) y `schema.sql` (tablas y relaciones).
 
 Todo el código se revisó, se ejecutó con `mvn test` y se integró por pull requests.
 
